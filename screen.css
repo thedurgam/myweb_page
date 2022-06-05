@@ -1,0 +1,228 @@
+html{
+    background-color: #869960;
+    line-height: 1.8;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100%;
+    margin: 0%;
+}
+header{
+    padding:1% 1% 1% 1% ;
+    color: rgb(94, 185, 114);
+    background-image: url(../media/images/flower.jpg);
+    background-position: center center;
+    margin:0%;
+    background-repeat: no-repeat;
+}
+.container{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(209, 230, 223);
+    padding-left:3%;
+    padding-right: 3%;
+    box-sizing: border-box;
+}
+.content{
+    border-top: 3px solid rgb(18, 56, 35);
+    border-bottom: 3px solid rgb(18, 56, 35);
+    box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+.main_area h1{
+    font-size: 200%;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: 4px;
+    word-spacing: 6px;
+    text-shadow: 2px 6px 5px rgb(54, 49, 49);
+    text-transform: uppercase;
+}
+.main_area{
+    width: 60%;
+    float: left;
+    padding-right: 1%;;
+    box-sizing: border-box;
+    text-indent: 25px;
+}
+.sidebar{
+    width: 40%;
+    float: right;
+    padding: 1% 1% 1% 1%;
+    box-sizing: border-box;/*this  is to adjust the content acording to the size*/ 
+    background-color: #9ea592;
+    background-image: linear-gradient(to bottom,rgb(109, 165, 109),rgb(209, 230, 223));
+    
+}
+.fix{
+    clear: both;/*to get the bottom lline and clear the main and sidebars*/
+}
+footer{
+    font-size: smaller;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+    color: #11140a;
+}
+/* navi elements are styling*/
+.navigation{
+    box-sizing: border-box;
+}
+.fix_float{
+    clear: both;/*clear the float*/
+}
+.navigation ul{
+    padding: 1% 1% 1% 0%;
+}
+.navigation li{
+    list-style:none;
+    float: left;
+    padding: 1% 1% 1% 0%;
+    color:black;
+    font-weight: bold;
+
+}
+.navigation a{
+    display: block;
+    text-decoration:none;
+    color: #464941;
+    padding:10px 20px;
+    border: 2px solid rgb(6, 59, 6);
+    transition-property: all;
+    transition-duration: 2s;
+}
+.navigation a:hover{
+    background-color: #7a9636;
+
+}
+.set a{
+    display: block;
+    width: 10px;
+    height: 29px;
+    background-image: url(../media/images/sprites.png);
+    text-indent: -9999px;
+    background-position: 0 -100px;
+    border: none;
+    
+
+}
+.set a:hover{
+    background-position: -50px -100px;/* to know the exact position use gimp.org*/
+    background-color:pink;
+}
+
+/* navigationn ends*/
+/*image section styling*/
+/* Bounce animation*/
+@keyframes fadeBounce{
+    0%{
+        opacity: 0;
+        transform: translateY(-200%);
+    }
+    40%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    60%{
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    80%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    90%{
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+img{
+    max-width: 100%;
+    height: auto;
+    transform: rotate(-15deg) scale(0.5) skew(-5deg) ;
+        
+}
+.img_section{
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeBounce 1s forwards;
+}
+.img_section img{
+    display:block;
+    transition: all 5s ease;
+}
+.img_section:hover img{
+    transform:scale(1.5);
+}
+.img_des{
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    color: aliceblue;
+    background-color: rgba(0,0,0,0.8);
+    padding: 1% 1%;
+    transform: translateY(100%);
+    transition-property: all;
+    transition-duration: 1s;
+
+    
+}
+.img_section:hover .img_des{
+    opacity: 1;
+    transform: translateY(0);
+}
+/*modifying webpage inorder to use in mobiles,tabs*/
+@media  screen and (max-width:700px) {
+    
+    .navigation li{
+        width: 50%;
+    }
+    .main_area,
+    .sidebar{
+        width: auto;
+        float: none;
+    }
+    
+}
+/*modifying webpage inorder to use in the large screens*/
+@media screen and (min-width:1500px){
+    .container{
+        max-width: 1200px;
+
+    }
+    body{
+        font-size: 17px;
+    }
+}
+/* 12 Grid layout */
+@media screen and(min-width:768px) {
+    .col-sm-11{width: 91%;}
+    .col-sm-10{width: 83%;}
+    .col-sm-9{width: 75%;}
+    .col-sm-8{width: 66%;}
+    .col-sm-7{width: 58%;}
+    .col-sm-6{width: 50%;}
+    .col-sm-5{width: 41%;}
+    .col-sm-4{width: 30%;}
+    .col-sm-3{width: 25%;}
+    .col-sm-2{width: 16%;}
+    .col-sm-1{width: 8%;}
+}
+@media screen and(min-width:480px) {
+    .col-sm-8{width: 60%;}
+    .col-sm-7{width: 50%;}
+    .col-sm-6{width: 40%;}
+    .col-sm-5{width: 30%;}
+    .col-sm-4{width: 20%;}
+    .col-sm-3{width: 15%;}
+    .col-sm-2{width: 10%;}
+    .col-sm-1{width: 5%;}
+    
+}
